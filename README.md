@@ -58,4 +58,19 @@ import scala.util.Using
         val lines = page.getLines
         lines.foreach(println)
     }
-````
+```
+
+## Execute process
+
+The `!!` operator executes command and returns its output.  
+
+```scala
+import sys.process._
+import scala.language.postfixOps
+
+@main def main() = 
+
+    val res = "ls -al" !!
+
+    println(res)
+```

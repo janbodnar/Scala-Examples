@@ -68,7 +68,7 @@ Scala is a functional language with a powerful type system.
     println(r.filter(_ % 2 == 0))
 ```
 
-## Random
+## Shuffle list of cards
 
 ```scala
 import scala.util.Random

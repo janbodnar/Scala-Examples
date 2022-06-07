@@ -45,7 +45,7 @@ import scala.language.postfixOps
     URL("http://webcode.me/favicon.ico") #> File("favicon.ico") !
 ```
 
---
+---
 
 ```scala
 import java.nio.file.Files

@@ -80,6 +80,28 @@ Scala is a functional language with a powerful type system.
     println(r.filter(_ % 2 == 0))
 ```
 
+## Iterate runes
+
+```scala
+import java.text.BreakIterator
+
+@main def main() = 
+
+    val text = "🐜🐬🐄🐘🦂🐫🐑🦍🐯🐞"
+
+    val it = BreakIterator.getCharacterInstance
+    it.setText(text)
+
+    var start = it.first
+    var end = it.next
+
+    while (start < end) do 
+
+        println(text.substring(start, end))
+        start = end 
+        end = it.next
+```
+
 ## Shuffle list of cards
 
 ```scala

@@ -32,6 +32,42 @@ Scala is a functional language with a powerful type system.
     println(sum)
 ```
 
+## Ranges
+
+```scala
+
+@main def main() = 
+
+    for (i <- 1 to 3) println(i)
+
+    println("---------------------")
+
+    for (i <- 20 to 30 by 2) do println(i)
+
+    println("---------------------")
+
+    for (i <- 1 until 3) println(i)
+
+    println("---------------------")
+
+    val nums = List.range(10, 14)
+    nums.foreach(println)
+
+    println("---------------------")
+
+    val res = (1 to 6).map(e => e * 2)
+    for e <- res do println(e)
+
+    println("---------------------")
+
+    val r = 100 to 111
+
+    println(r.size)
+    println(r.contains(106))
+
+    println(r.filter(_ % 2 == 0))
+```
+
 ## Download image
 
 ```scala

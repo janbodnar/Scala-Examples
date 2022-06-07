@@ -137,11 +137,11 @@ import scala.util.Using
 
 @main def main() =
 
-    val url = URL("http://example.com/favicon.ico")
+    val url = URL("http://webcode.me/favicon.ico")
 
     Using(url.openStream) { in =>
 
-        Files.copy(in, Paths.get("favicon2.ico"))
+        Files.copy(in, Paths.get("favicon.ico"))
     }
 ```
 

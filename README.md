@@ -38,12 +38,31 @@ Scala is a functional language with a powerful type system.
 import java.io.File
 import java.net.URL
 import scala.sys.process._
-import  scala.language.postfixOps
+import scala.language.postfixOps
 
 @main def main() =
 
     URL("http://webcode.me/favicon.ico") #> File("favicon.ico") !
 ```
+
+--
+
+```scala
+import java.nio.file.Files
+import java.nio.file.Paths
+import java.net.URL
+import scala.util.Using
+
+@main def main() =
+
+    val url = URL("http://example.com/favicon.ico")
+
+    Using(url.openStream) { in =>
+
+        Files.copy(in, Paths.get("favicon2.ico"))
+    }
+```
+
 
 ## Get HTML of web page
 

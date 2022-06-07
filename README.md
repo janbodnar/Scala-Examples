@@ -21,3 +21,13 @@ Scala is a functional language with a powerful type system.
     val word = "falcon"
     println(s"$word has ${word.size} letters")
   ```
+
+## Main function
+
+```scala
+
+@main def main(vals:Int*) =
+
+    val sum = vals.sum
+    println(sum)
+```

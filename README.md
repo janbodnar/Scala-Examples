@@ -32,6 +32,18 @@ Scala is a functional language with a powerful type system.
     println(sum)
 ```
 
+## Read input 
+
+```scala
+@main def main() = 
+
+    print("Enter your name: ")
+
+    val name = io.StdIn.readLine
+
+    printf("Hello %s!\n", name)
+```
+
 ## Ranges
 
 ```scala

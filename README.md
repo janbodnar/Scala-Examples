@@ -68,6 +68,52 @@ Scala is a functional language with a powerful type system.
     println(r.filter(_ % 2 == 0))
 ```
 
+## Random
+
+```scala
+import scala.util.Random
+
+
+@main
+def main() = 
+
+    val cards = List(
+        "🂡", "🂱", "🃁", "🃑",
+        "🂢", "🂲", "🃂", "🃒",
+        "🂣", "🂳", "🃃", "🃓",
+        "🂤", "🂴", "🃄", "🃔",
+        "🂥", "🂵", "🃅", "🃕",
+        "🂦", "🂶", "🃆", "🃖",
+        "🂧", "🂷", "🃇", "🃗",
+        "🂨", "🂸", "🂸", "🂸",
+        "🂩", "🂩", "🃉", "🃙",
+        "🂪", "🂺", "🃊", "🃚",
+        "🂫", "🂻", "🃋", "🃛",
+        "🂭", "🂽", "🃍", "🃝",
+        "🂮", "🂾", "🃎", "🃞"
+        )
+
+    show(cards)
+
+    println
+
+    println("---------------")
+
+    val shuffled = Random.shuffle(cards)
+
+    show(shuffled)
+
+    println
+    
+def show(cards: List[String]) = 
+    
+    cards.zipWithIndex.foreach { case (e, i) => 
+        if i != 0 && i % 13 == 0 then println
+        print(s"${e} ")
+    }
+```
+
+
 ## Download image
 
 ```scala

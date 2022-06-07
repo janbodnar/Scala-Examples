@@ -95,7 +95,7 @@ import java.text.BreakIterator
     var start = it.first
     var end = it.next
 
-    while (start < end) do 
+    while start < end do 
 
         println(text.substring(start, end))
         start = end 

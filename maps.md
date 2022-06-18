@@ -72,3 +72,28 @@ def main() =
     val res3 = capitals.filter { case (k, v) => v < 1000_000 }
     println(res3)
 ```
+
+## count/partition
+
+```scala
+val capitals = Map("Bratislava" -> 424207, "Vilnius" -> 556723,
+    "Lisbon" -> 564657, "Riga" -> 713016, "Jerusalem" -> 780200, 
+    "Warsaw" -> 1711324, "Budapest" -> 1729040, "Prague" -> 1241664,
+    "Helsinki" -> 596661, "Tokyo" -> 13189000, "Madrid" -> 3233527)
+
+@main 
+def main() =
+
+    val n = capitals.count(e => e._2 > 1000_000)
+    println(n)
+
+    val (bigs, smalls) = capitals.partition(e => e._2 > 1000_000)
+    
+    println("over million")
+    bigs.foreach(println)
+
+    println("-----------------------------------")
+
+    println("below million")
+    smalls.foreach(e => println(s"${e._1} ${e._2}"))
+```

@@ -28,6 +28,23 @@
     println(msum)
 ```
 
+## Guards
+
+```scala
+@main def main() =
+
+    val words = List("sky", "war", "water", "rain", 
+        "some", "cup", "train", "wrinkle", "worry")
+
+    val res = for
+        word <- words
+        if word.startsWith("w")
+    yield
+        word.length 
+
+    println(res)
+```
+
 ## For comprehension
 
 ```scala

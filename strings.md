@@ -38,3 +38,15 @@
     println(msum)
 ```
 
+## Multiply
+
+```scala
+@main def main() =
+
+    val msg = "The shadown of the beast"
+    val n = msg.length
+
+    println("-" * n)
+    println(msg)
+    println("-" * n)
+```

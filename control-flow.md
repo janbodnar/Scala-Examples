@@ -27,3 +27,22 @@
 
     println(msum)
 ```
+
+# While 
+
+```scala
+@main def main() = 
+
+    val vals = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+    val n = vals.length
+
+    var i = 0
+    var msum = 0
+
+    while i < n do 
+        msum = msum + vals(i)
+        i = i + 1
+
+    println(msum)
+```

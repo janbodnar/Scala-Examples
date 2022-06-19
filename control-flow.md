@@ -28,6 +28,23 @@
     println(msum)
 ```
 
+## Multiple fors
+
+```scala
+@main def main() = 
+
+    val vals1 = List('A', 'B', 'C', 'D', 'E')
+    val vals2 = List(1, 2, 3, 4, 5)
+
+    val res = for 
+        e1 <- vals1 
+        e2 <- vals2
+    yield 
+        s"$e1$e2"
+
+    println(res)
+```
+
 ## Guards
 
 ```scala

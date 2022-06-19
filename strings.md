@@ -27,7 +27,7 @@
 
     val vals = List[String | Int]("3", 12, "11", 5, 6, "8") 
  
-    val vals2 = vals.map(_.toString().toInt)
+    val vals2 = vals.map(_.toString.toInt)
     println(vals2.sum)
 
     var msum = 0

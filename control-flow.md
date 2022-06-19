@@ -13,7 +13,7 @@
         println(s"negative value (${r})")
  ```
 
-# For expression
+## For expression
 
 ```scala
 @main def main() = 
@@ -28,7 +28,30 @@
     println(msum)
 ```
 
-# While 
+## For comprehension
+
+```scala
+case class User(name: String, age: Int)
+
+val users = List(
+  User("John", 18),
+  User("Brian", 31),
+  User("Veronika", 23),
+  User("Lucia", 48),
+  User("Peter", 21))
+
+val res =
+
+  for (user <- users if user.age >= 20 && user.age < 30)
+  yield user
+
+
+@main def main() = 
+
+    res.foreach(println) 
+```
+
+## While 
 
 ```scala
 @main def main() = 

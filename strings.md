@@ -50,3 +50,25 @@
     println(msg)
     println("-" * n)
 ```
+
+## Iterate runes
+
+```scala
+import java.text.BreakIterator
+
+@main def main() = 
+
+    val text = "🐜🐬🐄🐘🦂🐫🐑🦍🐯🐞"
+
+    val it = BreakIterator.getCharacterInstance
+    it.setText(text)
+
+    var start = it.first
+    var end = it.next
+
+    while start < end do 
+
+        println(text.substring(start, end))
+        start = end 
+        end = it.next
+```

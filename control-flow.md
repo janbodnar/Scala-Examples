@@ -13,22 +13,16 @@
         println(s"negative value (${r})")
  ```
 
-## For expression
+## For with range
 
 ```scala
-@main def main() = 
+@main def main() =
 
-    val vals = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-
-    var msum = 0
-
-    for e <- vals do 
-        msum = msum + e
-
-    println(msum)
+    for n <- 1 to 10 do
+        println(n)
 ```
 
-## Multiple fors
+## Multiple for generators
 
 ```scala
 @main def main() = 
@@ -58,6 +52,24 @@
         if word.startsWith("w")
     yield
         word.length 
+
+    println(res)
+```
+
+## Multiple guards
+
+```scala
+@main def main() =
+
+    val words = List("sky", "war", "water", "rain", 
+        "some", "cup", "train", "wrinkle", "worry")
+
+    val res = for
+        word <- words
+        if word.startsWith("w")
+        if word.endsWith("r")
+    yield
+        word 
 
     println(res)
 ```

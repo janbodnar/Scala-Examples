@@ -118,7 +118,7 @@ val res =
     res.foreach(println) 
 ```
 
-## While 
+## While loop
 
 ```scala
 @main def main() = 
@@ -136,3 +136,17 @@ val res =
 
     println(msum)
 ```
+
+## Match expression
+
+```scala
+@main def main() = 
+    
+    val grades = List("A", "B", "C", "D", "E", "F", "FX")
+    
+    for grade <- grades do
+        grade match
+            case "A" | "B" | "C" | "D" | "E" | "F" => println("passed")
+            case "FX" => println("failed")
+```
+

@@ -34,6 +34,17 @@ import scala.util.Random
     println(res)
 ```
 
+## For with map
+
+```scala
+@main def main() =
+
+    val cts = Map("sk" -> "Slovakia", "ru" -> "Russia", 
+        "de" -> "Germany", "no" -> "Norway")
+
+    for (k, v) <- cts do println(s"${k} ${v}")
+````
+
 ## For with range
 
 ```scala

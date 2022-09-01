@@ -38,6 +38,31 @@
     println(msum)
 ```
 
+## StringBuilder
+
+Immutable strings with `StringBuilder`.   
+
+```scala
+import scala.collection.mutable.StringBuilder
+
+@main def main() =
+
+    val name = "Jane"
+    val name2 = name.replace('J', 'K')
+    val name3 = name2.replace('n', 't')
+
+    println(name)
+    println(name3)
+
+    val sb = StringBuilder("Jane")
+    println(sb)
+
+    sb.setCharAt(0, 'K')
+    sb.setCharAt(2, 't')
+
+    println(sb)
+```
+
 ## Multiply
 
 ```scala

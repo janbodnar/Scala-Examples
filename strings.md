@@ -63,6 +63,69 @@ import scala.collection.mutable.StringBuilder
     println(sb)
 ```
 
+## Multiline strings
+
+```scala
+@main def main() =
+
+    val sonnet55 =
+        """Not marble nor the gilded monuments
+        |Of princes shall outlive this powerful rhyme,
+        |But you shall shine more bright in these contents
+        |Than unswept stone besmeared with sluttish time.
+        |When wasteful war shall statues overturn,
+        |And broils root out the work of masonry,
+        |Nor Mars his sword nor war's quick fire shall burn
+        |The living record of your memory.
+        |'Gainst death and all-oblivious enmity
+        |Shall you pace forth; your praise shall still find room
+        |Even in the eyes of all posterity
+        |That wear this world out to the ending doom.
+        |So, till the Judgement that yourself arise,
+        |You live in this, and dwell in lovers' eyes.""".stripMargin
+
+    println(sonnet55)
+```
+
+## Escape characters
+
+```scala
+@main def main() =
+
+    println("Three\t bottles of wine")
+    println("He said: \"I love ice skating\"")
+    println("Line 1:\nLine 2:\nLine 3:")
+```
+
+## Raw strings 
+
+```scala
+@main def main() = 
+
+    println(raw"snow\tshow\tsnow")
+    println("becomes") 
+    println("snow\tshow\tsnow")
+```
+
+## String to integer
+
+```scala
+@main def main() =
+
+    val vals = List[String | Int]("3", 12, "11", 5, 6, "8")
+
+    val vals2 = vals.map(_.toString.toInt)
+    println(vals2.sum)
+
+    var msum = 0
+
+    for e <- vals do
+        msum = msum + e.toString.toInt
+
+    println(msum)
+```
+
+
 ## Multiply
 
 ```scala

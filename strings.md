@@ -241,3 +241,22 @@ import java.text.BreakIterator
     println(joined2)
 ```
 
+## Starts/Ends
+
+```scala
+@main def main() =
+
+    val words = List("tank", "boy", "tourist", "ten",
+            "pen", "car", "marble", "sonnet", "pleasant",
+            "ink", "atom")
+
+    val res = words.filter(e => startWithT(e))
+    println(res)
+
+    val res2 = words.filter(e => endWithK(e))
+    println(res2)
+
+
+val startWithT = (word: String) => word.startsWith("t")
+val endWithK = (word: String) => word.endsWith("k")
+```

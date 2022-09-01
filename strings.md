@@ -139,6 +139,36 @@ import scala.collection.mutable.StringBuilder
     println("-" * n)
 ```
 
+## Lines
+
+```scala
+@main def main() =
+
+    val words = """
+        |club
+        |sky
+        |blue
+        |cup
+        |coin
+        |new
+        |cent
+        |owl
+        |falcon
+        |brave
+        |war
+        |ice
+        |paint
+        |water""".stripMargin
+
+    val wstream = words.lines()
+
+    wstream.forEach(word =>
+
+        if word.length() == 3 then
+            println(word)
+    )
+```
+
 ## Iterate runes
 
 ```scala
@@ -159,6 +189,17 @@ import java.text.BreakIterator
         println(text.substring(start, end))
         start = end 
         end = it.next
+```
+
+## Bytes
+
+```scala
+@main def main() = 
+
+    val w = "and old falcon"
+
+    println(w.getBytes.mkString(" "))
+    println(w.getBytes.map("%02x ".format(_)).mkString)
 ```
 
 ## Scala regex matches
@@ -185,3 +226,18 @@ import java.text.BreakIterator
             println(word)
     )
 ```
+
+## Join strings
+
+```scala
+@main def main() =
+
+    val words = List("work", "sky", "place", "cup")
+
+    val joined = words.mkString(" ")
+    println(joined)
+
+    val joined2 = words.mkString(", ")
+    println(joined2)
+```
+

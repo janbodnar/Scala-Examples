@@ -160,3 +160,28 @@ import java.text.BreakIterator
         start = end 
         end = it.next
 ```
+
+## Scala regex matches
+
+```scala
+@main def main() =
+
+    var words = """
+            |book
+            |bookshelf
+            |bookworm
+            |bookcase
+            |bookish
+            |bookkeeper
+            |booklet
+            |bookmark
+            """.stripMargin
+
+    var wstream = words.lines
+
+    wstream.forEach(word =>
+
+        if word.matches("book(worm|mark|keeper)?") then
+            println(word)
+    )
+```

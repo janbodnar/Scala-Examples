@@ -44,6 +44,25 @@ Scala is a functional language with a powerful type system.
     printf("Hello %s!\n", name)
 ```
 
+## Type inference 
+
+In many cases, Scala can infer the types for many identifiers.   
+Sometimes; however, we need to specify the types explicitly.  
+
+```scala
+val square = (x: Int) => x * x
+val triple: (x: Int) => Int = (x) => x * x * x
+
+@main def main() =
+
+    val res = square(3)
+    println(res)
+
+    val res2 = triple(5)
+    println(res2)
+```
+
+
 ## Ranges
 
 ```scala

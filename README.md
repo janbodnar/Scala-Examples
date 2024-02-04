@@ -122,6 +122,23 @@ val triple: (x: Int) => Int = (x) => x * x * x
     println(r.filter(_ % 2 == 0))
 ```
 
+## Extension methods
+
+Extension methods enhance the capabilities of objects.  
+
+```scala
+import scala.io.Source
+import java.io.File
+
+extension (f: File)
+    def read() = Source.fromFile(f).getLines()
+
+@main def hello(): Unit =
+
+    val f = new File("src/main/scala/words.txt")
+    f.read().foreach(println)
+```
+
 ## :: and #:: operators
 
 The operators are right-to-left associated. Scala looks at the last character of the operator.  

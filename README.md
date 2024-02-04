@@ -5,6 +5,8 @@ Scala is a functional language with a powerful type system.
 
 ## Install & setup 
 
+Install Scala from https://www.scala-lang.org/download/  
+
 `sbt new scala/scala3.g8` - creates new Scala 3 project  
 
 Get Scala version  

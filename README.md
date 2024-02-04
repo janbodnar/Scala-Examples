@@ -70,6 +70,23 @@ Run script with ammonite
     printf("Hello %s!\n", name)
 ```
 
+## Multi-word methods
+
+```scala
+class Message(who: String):
+  def `send message`(msg: String): Unit = println(s"$who said: $msg")
+
+@main def main() =
+
+  val m1 = Message("Martin")
+  m1 `send message` "Hello there!"
+
+  val m2 = Message("Jozef")
+  m2 `send message` "How are you?"
+```
+
+
+
 ## Singleton
 
 ```scala

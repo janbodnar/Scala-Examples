@@ -3,8 +3,37 @@ Scala code examples
 
 Scala is a functional language with a powerful type system.  
 
+## Install & setup 
 
 `sbt new scala/scala3.g8` - creates new Scala 3 project  
+
+Get Scala version  
+
+```
+$ scala --version
+Scala code runner version 3.3.1 -- Copyright 2002-2023, LAMP/EPFL
+```
+
+Courier setup  
+
+```
+$ cs setup
+Checking if a JVM is installed
+Found a JVM installed under C:\Users\Jano\.jdks\coretto-17.0.7_7.
+
+Checking if ~\AppData\Local\Coursier\data\bin is in PATH
+
+Checking if the standard Scala applications are installed
+  Found ammonite
+  Found cs
+  Found coursier
+  Found scala
+  Found scalac
+  Found scala-cli
+  Found sbt
+  Found sbtn
+  Found scalafmt
+```
 
 ## Basic string operations
 

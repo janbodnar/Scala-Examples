@@ -48,21 +48,17 @@ for e <- nums2 do println(e)
 ## For with map
 
 ```scala
-@main def main() =
+val cts = Map("sk" -> "Slovakia", "ru" -> "Russia", 
+    "de" -> "Germany", "no" -> "Norway")
 
-    val cts = Map("sk" -> "Slovakia", "ru" -> "Russia", 
-        "de" -> "Germany", "no" -> "Norway")
-
-    for (k, v) <- cts do println(s"${k} ${v}")
-````
+for (k, v) <- cts do println(s"$k $v")
+```
 
 ## For with range
 
 ```scala
-@main def main() =
-
-    for n <- 1 to 10 do
-        println(n)
+for n <- 1 to 10 do
+    println(n)
 ```
 
 ## Multiple for generators

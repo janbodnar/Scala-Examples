@@ -44,7 +44,7 @@ Scala is a functional language with a powerful type system.
     printf("Hello %s!\n", name)
 ```
 
-## Singleto 
+## Singleton
 
 ```scala
 object Counter:

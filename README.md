@@ -85,6 +85,30 @@ class Message(who: String):
   m2 `send message` "How are you?"
 ```
 
+## Tuples
+
+```scala
+@main def main() =
+
+  val ui = ("John Doe", "gardener", 34)
+  println(ui)
+
+  println(ui._1)
+  println(ui._2)
+  println(ui._3)
+
+  println("-------------------------")
+
+  ui.productIterator.foreach(println)
+
+  println("-------------------------")
+
+  val (name, occupation, _) = ui
+  
+  println(name)
+  println(occupation)
+```
+
 ## Array to string
 
 ```scala

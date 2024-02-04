@@ -34,6 +34,17 @@ import scala.util.Random
     println(res)
 ```
 
+## Iterate array & list
+
+```scala
+val nums = Array(1, 2, 3, 4)
+for e <- nums do println(e)
+
+val nums2 = List(1, 2, 3, 4)
+for e <- nums2 do println(e)
+```
+
+
 ## For with map
 
 ```scala

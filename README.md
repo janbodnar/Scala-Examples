@@ -85,7 +85,12 @@ class Message(who: String):
   m2 `send message` "How are you?"
 ```
 
+## Array to string
 
+```scala
+val a = Array(1, 2, 3, 4, 5)
+println(a.mkString(", "))
+```
 
 ## Singleton
 

@@ -101,6 +101,8 @@ val triple: (x: Int) => Int = (x) => x * x * x
 
 ## :: and #:: operators
 
+The operators are right-to-left associated. Scala looks at the last character of the operator.  
+
 ```scala
     val nums = 1 :: 2 :: 3 :: 6 :: List(4, 5)
     println(nums)

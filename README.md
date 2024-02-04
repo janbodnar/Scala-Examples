@@ -83,7 +83,7 @@ object Counter:
   def get: Int = counter
 
 
-@main def hello(): Unit =
+@main def main(): Unit =
 
     val c = Counter
     c.increment()

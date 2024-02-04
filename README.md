@@ -119,10 +119,10 @@ object Counter:
 
 ```scala
 class -->[Int, String]
+val c: Int --> String = ???
 
-@main def main() =
-
-    val c: Int --> String = ???
+class <[Int, Int]
+val lessThen: Int < Int = ???
 ```
 
 

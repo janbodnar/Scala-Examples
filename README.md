@@ -9,6 +9,8 @@ Install Scala from https://www.scala-lang.org/download/
 
 `sbt new scala/scala3.g8` - creates new Scala 3 project  
 
+`cs install scala:3.3.1 && cs install scalac:3.3.1` - install specific Scala version with Courstier  
+
 Get Scala version  
 
 ```

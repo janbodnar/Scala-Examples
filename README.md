@@ -14,25 +14,12 @@ $ scala --version
 Scala code runner version 3.3.1 -- Copyright 2002-2023, LAMP/EPFL
 ```
 
-Courier setup  
+Coursier setup  
 
 ```
 $ cs setup
 Checking if a JVM is installed
-Found a JVM installed under C:\Users\Jano\.jdks\coretto-17.0.7_7.
-
-Checking if ~\AppData\Local\Coursier\data\bin is in PATH
-
-Checking if the standard Scala applications are installed
-  Found ammonite
-  Found cs
-  Found coursier
-  Found scala
-  Found scalac
-  Found scala-cli
-  Found sbt
-  Found sbtn
-  Found scalafmt
+...
 ```
 
 ## Basic string operations

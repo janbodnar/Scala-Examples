@@ -9,6 +9,15 @@ println(nums.mkString(", "))
 println(nums.mkString("[", ", ", "]"))
 ```
 
+## Array comprehension
+
+```scala
+val a = Array(1, 2, 3, 4, 5)
+val b = for (e <- a if e > 2) yield e
+
+println(b.mkString(", "))
+```
+
 ## Update
 
 ```scala

@@ -44,6 +44,29 @@ Scala is a functional language with a powerful type system.
     printf("Hello %s!\n", name)
 ```
 
+## Singleto 
+
+```scala
+object Counter:
+  private var counter: Int = 0
+  val label: String = "Counter"
+
+  def increment(): Unit =
+    counter += 1
+
+  def get: Int = counter
+
+
+@main def hello(): Unit =
+
+    val c = Counter
+    c.increment()
+    c.increment()
+    c.increment()
+
+    println(c.get)
+```
+
 ## Type inference 
 
 In many cases, Scala can infer the types for many identifiers.   

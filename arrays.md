@@ -1,6 +1,12 @@
 # Arrays
 
 
+## ToString
+
+```scala
+val nums = Array(1, 2, 3, 4)
+println(nums.mkString("[", ", ", "]"))
+```
 
 ## Update
 

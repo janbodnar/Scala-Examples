@@ -22,6 +22,10 @@ Checking if a JVM is installed
 ...
 ```
 
+Run script with ammonite 
+
+`amm First.scala`  
+
 ## Basic string operations
 
 ```scala

@@ -5,6 +5,7 @@
 
 ```scala
 val nums = Array(1, 2, 3, 4)
+println(nums.mkString(", "))
 println(nums.mkString("[", ", ", "]"))
 ```
 

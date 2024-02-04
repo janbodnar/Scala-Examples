@@ -4,6 +4,8 @@ Scala code examples
 Scala is a functional language with a powerful type system.  
 
 
+`sbt new scala/scala3.g8` - creates new Scala 3 project  
+
 ## Basic string operations
 
 ```scala

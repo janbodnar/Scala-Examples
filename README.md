@@ -110,6 +110,17 @@ object Counter:
     println(c.get)
 ```
 
+## Infix types 
+
+```scala
+class -->[Int, String]
+
+@main def main() =
+
+    val c: Int --> String = ???
+```
+
+
 ## Type inference 
 
 In many cases, Scala can infer the types for many identifiers.   

@@ -99,6 +99,16 @@ val triple: (x: Int) => Int = (x) => x * x * x
     println(r.filter(_ % 2 == 0))
 ```
 
+## :: and #:: operators
+
+```scala
+    val nums = 1 :: 2 :: 3 :: 6 :: List(4, 5)
+    println(nums)
+
+    val nums2 = 1 #:: 2 #:: 3 #:: LazyList(4, 5) 
+    nums2.foreach(e => println(e))
+```
+
 ## Shuffle list of cards
 
 ```scala

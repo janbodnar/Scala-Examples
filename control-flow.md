@@ -3,16 +3,14 @@
 ## If conditions
 
 ```scala
-@main def main() = 
+val r = Random.between(-10, 10)
 
-    val r = Random.between(-10, 10)
-
-    if r > 0 then 
-        println(s"positive value (${r})") 
-    else if r == 0 then
-        println("zero value")
-    else
-        println(s"negative value (${r})")
+if r > 0 then 
+    println(s"positive value (${r})") 
+else if r == 0 then
+    println("zero value")
+else
+    println(s"negative value (${r})")
 ```
 
 ## If expressions
@@ -64,53 +62,47 @@ for n <- 1 to 10 do
 ## Multiple for generators
 
 ```scala
-@main def main() = 
+val vals1 = List('A', 'B', 'C', 'D', 'E')
+val vals2 = List(1, 2, 3, 4, 5)
 
-    val vals1 = List('A', 'B', 'C', 'D', 'E')
-    val vals2 = List(1, 2, 3, 4, 5)
+val res = for 
+    e1 <- vals1 
+    e2 <- vals2
+yield 
+    s"$e1$e2"
 
-    val res = for 
-        e1 <- vals1 
-        e2 <- vals2
-    yield 
-        s"$e1$e2"
-
-    println(res)
+println(res)
 ```
 
 ## Guards
 
 ```scala
-@main def main() =
+val words = List("sky", "war", "water", "rain", 
+    "some", "cup", "train", "wrinkle", "worry")
 
-    val words = List("sky", "war", "water", "rain", 
-        "some", "cup", "train", "wrinkle", "worry")
+val res = for
+    word <- words
+    if word.startsWith("w")
+yield
+    word.length 
 
-    val res = for
-        word <- words
-        if word.startsWith("w")
-    yield
-        word.length 
-
-    println(res)
+println(res)
 ```
 
 ## Multiple guards
 
 ```scala
-@main def main() =
+val words = List("sky", "war", "water", "rain", 
+    "some", "cup", "train", "wrinkle", "worry")
 
-    val words = List("sky", "war", "water", "rain", 
-        "some", "cup", "train", "wrinkle", "worry")
+val res = for
+    word <- words
+    if word.startsWith("w")
+    if word.endsWith("r")
+yield
+    word 
 
-    val res = for
-        word <- words
-        if word.startsWith("w")
-        if word.endsWith("r")
-    yield
-        word 
-
-    println(res)
+println(res)
 ```
 
 ## For comprehension
@@ -139,32 +131,27 @@ val res =
 ## While loop
 
 ```scala
-@main def main() = 
+val vals = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+val n = vals.length
 
-    val vals = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+var i = 0
+var msum = 0
 
-    val n = vals.length
+while i < n do 
+    msum = msum + vals(i)
+    i = i + 1
 
-    var i = 0
-    var msum = 0
-
-    while i < n do 
-        msum = msum + vals(i)
-        i = i + 1
-
-    println(msum)
+println(msum)
 ```
 
 ## Match expression
 
-```scala
-@main def main() = 
-    
-    val grades = List("A", "B", "C", "D", "E", "F", "FX")
-    
-    for grade <- grades do
-        grade match
-            case "A" | "B" | "C" | "D" | "E" | "F" => println("passed")
-            case "FX" => println("failed")
+```scala   
+val grades = List("A", "B", "C", "D", "E", "F", "FX")
+
+for grade <- grades do
+    grade match
+        case "A" | "B" | "C" | "D" | "E" | "F" => println("passed")
+        case "FX" => println("failed")
 ```
 

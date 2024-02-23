@@ -168,6 +168,26 @@ val triple: (x: Int) => Int = (x) => x * x * x
     println(res2)
 ```
 
+## Enums
+
+```scala
+enum Season:
+  case Spring, Summer, Autumn, Winter
+
+object Season:
+  def rand(): Season = Random.shuffle(Season.values).head
+
+def checkSeason(season: Season) = season match
+  case Season.Spring => "Its spring"
+  case Season.Summer => "Its summer"
+  case Season.Autumn => "Its autumn"
+  case Season.Winter => "Its winter"
+
+@main def main(): Unit =
+
+  println(checkSeason(Season.rand()))
+```
+
 
 ## Ranges
 

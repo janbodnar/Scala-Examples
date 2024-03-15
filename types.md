@@ -6,7 +6,7 @@ class Being
 val objects: List[Any] = List(1,-2, 3.4f, 4.3, None, false, List(1, 2), 
     "Python", (2, 3), new Being(), Map("sky" -> "obloha"))
 
-@main def main() =
+@main def main =
   for e <- objects do
     e match
       case None            => println(s"$e is a null value")

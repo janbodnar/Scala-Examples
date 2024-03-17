@@ -242,6 +242,23 @@ extension (f: File)
     f.read().foreach(println)
 ```
 
+```scala
+case class Circle(x: Double, y: Double, radius: Double)
+
+extension (c: Circle)
+  def circumference: Double = c.radius * math.Pi * 2
+  def diameter: Double = c.radius * 2
+  def area: Double = math.Pi * c.radius * c.radius
+
+
+@main def main() = 
+
+    val c = Circle(4, 5, 5)
+    println(c.area)
+    println(c.diameter)
+    println(c.circumference)
+```
+
 ## :: and #:: operators
 
 The operators are right-to-left associated. Scala looks at the last character of the operator.  

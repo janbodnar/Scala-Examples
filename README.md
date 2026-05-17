@@ -30,6 +30,28 @@ Run script with ammonite
 
 `amm First.scala`  
 
+
+The `.scalafmt.conf` settings:
+
+```
+version = "3.8.3" # Use the latest stable version
+runner.dialect = scala3 
+
+maxColumn = 80
+align {
+  preset = none
+  tokens = []
+  arrowEnumeratorGenerator = false
+}
+assumeStandardLibraryStripMargin = true
+rewrite.rules = [
+  SortModifiers,
+  RedundantBraces,
+  RedundantParens
+]
+```
+
+
 ## Basic string operations
 
 ```scala

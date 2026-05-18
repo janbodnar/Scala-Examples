@@ -1,155 +1,113 @@
+Got it, Jan — thanks for the clarification.  
+You want **AGENTS.md**, but *not about agents themselves*.  
+This file is meant to be **instructions for your AI agents** that generate  
+Scala 3 documentation inside your `Scala-Examples` repository.
+
+Below is the **complete AGENTS.md**, rewritten to:  
+- match the style of your Java/Go/Dart AGENTS.md files  
+- remove all references to “agents” as a programming concept  
+- focus purely on **documentation‑generation rules**  
+- enforce **80‑character lines**, each ending with **two spaces**  
+- target **Scala 3**  
+- use the same tone and structure as your other language repos  
+
+I will now generate the full file.
+
+# **AGENTS.md**  
+*(for generating Scala 3 documentation)*  
+
+```markdown
 # Instructions  
 
 ## Introduction  
 
-At the beginning of the document, provide a detailed, in-depth overview of the  
-topic of agents in Scala 3. Explain what agents are in the context of modern  
-Scala applications, how they relate to concurrency, message passing, and state  
-management, and where they fit among other concurrency tools such as futures,  
-promises, and effect systems.  
+This document defines the rules for generating Scala 3 documentation within the  
+Scala-Examples repository. The goal is to maintain a consistent structure, tone,  
+and formatting style across all example files. These guidelines ensure that the  
+generated content is clear, concise, and aligned with the conventions used in  
+other language example repositories. All text must follow the 80-character line  
+limit, and each line must end with two spaces.  
 
-Describe typical use cases where agents are useful, such as coordinating work  
-between background tasks, isolating mutable state, or integrating with external  
-services. Highlight the benefits of using agents, including safer concurrency,  
-clearer ownership of state, and improved modularity, as well as their limits,  
-such as potential overhead, complexity, or debugging challenges.  
-
-Place agents in the broader Scala ecosystem. Mention that Scala 3 encourages  
-composable, type-safe abstractions, and that agents can be implemented using  
-standard libraries, lightweight wrappers, or higher-level frameworks. Emphasize  
-that the examples in this document focus on clear, idiomatic Scala 3 code that  
-can be easily adapted to real-world projects.  
+The documentation should help readers understand Scala 3 concepts through short  
+explanations and progressively structured examples. The writing style should be  
+simple and direct, avoiding unnecessary theory or advanced language features  
+unless the topic explicitly requires them. The examples must be runnable, easy  
+to follow, and written in idiomatic Scala 3.  
 
 ## Code descriptions  
 
-When asked to add a description for a section that contains code, follow these  
-rules consistently throughout the document.  
+When a section contains code, include a brief summary directly below the title.  
+This summary should explain the purpose of the example in one or two sentences.  
+Use fenced code blocks with the Scala language tag to ensure dark-theme syntax  
+highlighting. The code should be minimal, focused, and runnable without external  
+dependencies unless the section explicitly introduces them.  
 
-- Include a brief summary directly below the section title. This summary should  
-  explain in one or two sentences what the example demonstrates and why it is  
-  relevant. Keep it concise but informative.  
-- Provide the code in a fenced code block using the Scala language identifier,  
-  so that it is rendered with a dark theme in typical editors and viewers.  
-- After the code block, add a detailed explanation of the example. Use at least  
-  two to three sentences for simple snippets, and more for complex examples.  
-  Explain the control flow, important types, and any concurrency or agent logic.  
-- Limit all prose lines to 80 characters or fewer, and end each line with two  
-  spaces. Apply this rule to headings, paragraphs, list items, and comments in  
-  descriptive text.  
-- Maintain consistency with existing documents in the repository. Match the  
-  tone, level of detail, and structure used in other Scala-Examples markdown  
-  files, including spacing, heading levels, and naming conventions.  
+After each code block, provide a detailed explanation of the example. Use at  
+least two or three sentences for simple snippets, and more for complex ones.  
+Explain the control flow, the purpose of key constructs, and any Scala 3  
+features used. Keep all prose lines within the 80-character limit and end each  
+line with two spaces.  
 
-The explanation following each code block should help readers understand not  
-only what the code does, but also how it relates to the concept of agents.  
-Where appropriate, mention trade-offs, alternative approaches, and how the  
-pattern scales to larger applications.  
+Maintain consistency with existing documentation. Follow the same tone, spacing  
+rules, and formatting conventions used in other example files across the  
+repository.  
 
 ## Example structure  
 
-Examples in this document should build progressively, starting from simple  
-concepts and moving toward more advanced patterns. Organize sections so that  
-each new example assumes familiarity with the previous ones, without repeating  
-unnecessary details.  
+Examples must build progressively, starting with simple concepts and moving  
+toward more advanced topics. Each section should introduce only one idea at a  
+time. Avoid numbering section titles. Do not use titles such as *Example 1:  
+Variables*. Instead, use plain descriptive titles like *Variables*, *Functions*,  
+or *Pattern matching*.  
 
-Avoid numbering section titles. Do not use titles such as *Example 1: Basic  
-agent* or *Example 2: Message passing*. Instead, use plain, descriptive titles  
-like *Basic agent*, *Message passing between agents*, or *Supervising failing  
-agents*. This keeps the document clean and consistent with other examples.  
-
-Follow standard Java-style naming conventions for section titles and identifiers  
-where it makes sense, while still writing idiomatic Scala 3 code. Titles should  
-be in title case, short, and focused on the concept being demonstrated.  
-
-Ensure that each example introduces exactly one main idea. For instance, start  
-with a minimal agent that processes messages sequentially, then add examples  
-that show stateful agents, error handling, supervision, and integration with  
-futures or effect systems.  
+Follow standard Java-style naming conventions for section titles. Keep titles  
+short and focused on the concept being demonstrated. Ensure that each example  
+is self-contained and does not rely on previous examples unless the section  
+explicitly states that it builds on earlier material.  
 
 ## Language features (Scala 3)  
 
-Utilize modern Scala 3 features where they improve clarity and safety, while  
-keeping examples accessible to readers who know basic Scala syntax. Prefer  
-simple, direct code over overly clever constructs.  
+Use modern Scala 3 features where they improve clarity. Prefer simple, readable  
+syntax over advanced constructs. You may use top-level definitions, enums,  
+extension methods, and given instances when appropriate. Avoid complex type  
+level programming or macros unless the section specifically covers them.  
 
-You may use the following Scala 3 features when appropriate:  
-
-- Top-level definitions for simple examples, avoiding unnecessary wrapper  
-  objects when a standalone `@main` entry point is sufficient.  
-- Given instances and extension methods when they clarify agent configuration  
-  or message handling, but avoid heavy type-level programming in basic sections.  
-- Enums for modeling message types or agent states, providing clear and  
-  exhaustive pattern matching.  
-- Using clauses and context parameters where they make concurrency or execution  
-  context handling explicit and readable.  
-
-Avoid relying on external libraries unless the section explicitly focuses on  
-integration with a specific framework. When external libraries are used, mark  
-the section clearly and keep the core ideas understandable even without that  
-library.  
+When demonstrating concurrency, collections, or functional patterns, rely on  
+standard library features. External libraries should be introduced only in  
+clearly marked sections, and the examples should remain understandable even  
+without them.  
 
 ## Code format  
 
-Each example should follow a consistent structure that mirrors other language  
-example files in the repository. Use a simple entry point and keep the code  
-focused on the agent-related concept being demonstrated.  
-
-Use fenced code blocks with the Scala language tag to ensure dark-theme syntax  
-highlighting:  
+Use fenced code blocks with the Scala language tag:  
 
 ```scala
-@main def basicAgentDemo(): Unit =
-  import scala.concurrent.ExecutionContext
-  import scala.concurrent.ExecutionContext.Implicits.global
-  import scala.concurrent.Future
-  import scala.collection.mutable.Queue
+@main def demo(): Unit =
+  println("Hello, Scala 3")
+end demo
+```  
 
-  final class Agent[A](initial: A)(using ec: ExecutionContext):
-    private val mailbox = Queue[A]()
-    private var state: A = initial
+Keep examples short and runnable. Use clear names for variables, functions, and  
+types. Follow standard Scala 3 indentation and formatting conventions. Comments  
+inside code should be brief and helpful, staying within the 80-character limit  
+when possible.  
 
-    def send(msg: A): Unit =
-      mailbox.enqueue(msg)
-      Future:
-        processNext()
-
-    private def processNext(): Unit =
-      if mailbox.nonEmpty then
-        val msg = mailbox.dequeue()
-        state = msg
-        println(s"New state: $state")
-
-  val agent = Agent[Int](0)
-  agent.send(1)
-  agent.send(2)
-  agent.send(3)
-```
-
-Keep the example self-contained and runnable. Prefer small, focused snippets  
-over large, multi-file setups. Use clear names for functions, values, and types,  
-and keep indentation consistent with standard Scala 3 style.  
-
-When comments are necessary inside code blocks, keep them short and aligned with  
-the 80-character limit where practical. Comments should clarify intent, not  
-repeat what the code already states.  
+Avoid unnecessary boilerplate. Use top-level definitions for simple examples.  
+When a more complex structure is required, introduce it gradually and explain  
+each part clearly.  
 
 ## Terminology  
 
-When referencing functions or methods in the prose, use their names without  
-parentheses. For example, write *the `basicAgentDemo` function* instead of  
-*`basicAgentDemo()`*. Apply the same rule to other methods such as `send` or  
-`processNext`.  
+Use consistent terminology throughout the documentation. Refer to functions  
+without parentheses when mentioned in prose, such as *the `demo` function*.  
+Apply the same rule to other definitions like `run`, `apply`, or `process`.  
 
-Be precise and consistent in terminology across the document. Use *agent* for  
-the abstraction that owns and processes messages, *message* for the values sent  
-to an agent, and *mailbox* or *queue* for the internal buffer of pending  
-messages.  
+Use precise language when describing Scala features. Distinguish between  
+expressions, values, types, and definitions. When discussing concurrency or  
+asynchronous behavior, clearly separate conceptual behavior from execution  
+details such as threads or execution contexts.  
 
-When discussing concurrency, distinguish clearly between *logical concurrency*  
-(the structure of tasks and agents) and *execution* (threads, execution  
-contexts, or runtimes). This helps readers reason about behavior without  
-confusing implementation details with conceptual models.  
+Maintain consistent phrasing across all sections so that readers can easily  
+transfer understanding from one topic to another.  
 
-Use the same terms and phrasing throughout all sections so that readers can  
-transfer understanding from one example to the next without re-learning the  
-vocabulary.  
+Just tell me what you want next.

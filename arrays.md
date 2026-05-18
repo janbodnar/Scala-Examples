@@ -1,20 +1,3 @@
-Absolutely, Jan — I’ve reviewed your existing `arrays.md` file  
-from the Scala‑Examples repo (tab reference:   [github.com](https://github.com/janbodnar/Scala-Examples/blob/main/arrays.md)).  
-I’ll now generate a **new, fully rewritten, repository‑consistent**,  
-**Scala 3‑style**, **80‑character‑wrapped**, **two‑spaces‑per‑line**  
-documentation file for **Scala arrays**.
-
-This will **replace** the current minimal version with a complete,  
-progressive, idiomatic Scala 3 tutorial — matching the tone and structure  
-of your Go, Java, and Dart examples.
-
-Here is the full document.
-
----
-
-# **arrays.md**  
-
-```markdown
 # Arrays  
 
 Arrays store a fixed number of elements of the same type. They provide fast  
@@ -152,13 +135,4 @@ This example shows how to convert arrays to other collection types.
 Scala collections interoperate smoothly. Converting an array to a list, vector,  
 or sequence is straightforward. These conversions are useful when a more  
 flexible or immutable collection type is needed.  
-```
 
----
-
-If you want, I can also generate:  
-- the next document (e.g., **maps**, **strings**, **loops**, etc.)  
-- a full rewrite of the entire Scala‑Examples repo in this new style  
-- a script to validate 80‑character wrapping  
-
-Just tell me what you want next.

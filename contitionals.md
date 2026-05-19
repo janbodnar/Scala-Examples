@@ -9,12 +9,13 @@ This example shows a simple `if` statement that executes code based on a
 condition.
 
 ```scala
-@main def basicIf(): Unit =
+@main def main() =
 
     val temperature = 25
 
     if temperature > 20 then
         println("It's a warm day!")
+end main
 ```
 
 In Scala 3 the `if` keyword is followed by the condition and the `then`
@@ -28,7 +29,7 @@ This example demonstrates an `if-else` statement to handle two possible
 outcomes.
 
 ```scala
-@main def ifElse(): Unit =
+@main def main() =
 
     val age = 16
 
@@ -36,6 +37,7 @@ outcomes.
         println("You are an adult")
     else
         println("You are a minor")
+end main
 ```
 
 When the condition `age >= 18` is `true`, the first branch executes; otherwise
@@ -48,7 +50,7 @@ branch without any additional keyword.
 This example shows how to chain multiple conditions using `else if`.
 
 ```scala
-@main def elseIf(): Unit =
+@main def main() =
 
     val score = 85
 
@@ -60,6 +62,7 @@ This example shows how to chain multiple conditions using `else if`.
         println("Grade: C")
     else
         println("Grade: D or F")
+end main
 ```
 
 Conditions are evaluated from top to bottom and the first branch whose
@@ -73,12 +76,13 @@ This example shows that `if` in Scala is an expression that produces a value,
 not just a statement.
 
 ```scala
-@main def ifExpression(): Unit =
+@main def main() =
 
     val number = 7
     val result = if number % 2 == 0 then "even" else "odd"
 
     println(s"$number is $result")
+end main
 ```
 
 Because `if` is an expression, it can appear on the right-hand side of a
@@ -95,7 +99,7 @@ depending on several conditions.
 ```scala
 import scala.util.Random
 
-@main def multiLineIfExpr(): Unit =
+@main def main() =
 
     val r = Random.between(-10, 10)
 
@@ -107,6 +111,7 @@ import scala.util.Random
         s"negative value ($r)"
 
     println(message)
+end main
 ```
 
 Multi-line `if` expressions use indentation for the body of each branch.
@@ -121,7 +126,7 @@ This example demonstrates combining conditions with the logical AND (`&&`)
 operator.
 
 ```scala
-@main def logicalAnd(): Unit =
+@main def main() =
 
     val age = 25
     val hasLicense = true
@@ -130,6 +135,7 @@ operator.
         println("You can drive")
     else
         println("You cannot drive")
+end main
 ```
 
 The `&&` operator requires both operands to be `true` for the whole
@@ -143,7 +149,7 @@ This example shows how to use the logical OR (`||`) operator to check for
 multiple possibilities.
 
 ```scala
-@main def logicalOr(): Unit =
+@main def main() =
 
     val day = "Saturday"
 
@@ -151,6 +157,7 @@ multiple possibilities.
         println("It's the weekend!")
     else
         println("It's a weekday")
+end main
 ```
 
 The `||` operator returns `true` when at least one of its operands is `true`.
@@ -164,7 +171,7 @@ This example shows the logical NOT (`!`) operator to invert a boolean
 expression.
 
 ```scala
-@main def logicalNot(): Unit =
+@main def main() =
 
     val isRaining = false
 
@@ -172,6 +179,7 @@ expression.
         println("You don't need an umbrella")
     else
         println("Take an umbrella")
+end main
 ```
 
 The `!` operator flips `true` to `false` and vice versa. It is more readable
@@ -183,7 +191,7 @@ the condition. Prefer `!flag` over comparing to `false` explicitly.
 This example shows how short-circuiting avoids a potential null-pointer error.
 
 ```scala
-@main def shortCircuit(): Unit =
+@main def main() =
 
     val text: String | Null = null
 
@@ -191,6 +199,7 @@ This example shows how short-circuiting avoids a potential null-pointer error.
         println(s"Text: $text")
     else
         println("Text is null or empty")
+end main
 ```
 
 In a `&&` chain, if the left operand evaluates to `false` the right operand
@@ -204,7 +213,7 @@ explicit in Scala 3.
 This example demonstrates combining multiple conditions with grouping.
 
 ```scala
-@main def complexBooleans(): Unit =
+@main def main() =
 
     val temperature = 25
     val humidity    = 60
@@ -215,6 +224,7 @@ This example demonstrates combining multiple conditions with grouping.
         println("Perfect weather for outdoor activities!")
     else
         println("Maybe stay indoors")
+end main
 ```
 
 Parentheses group sub-expressions and make evaluation order explicit. Without
@@ -228,7 +238,7 @@ This example demonstrates a `match` expression to branch on discrete values,
 the Scala equivalent of a `switch` statement.
 
 ```scala
-@main def matchBasic(): Unit =
+@main def main() =
 
     val dayNumber = 3
 
@@ -240,6 +250,7 @@ the Scala equivalent of a `switch` statement.
         case 5 => println("Friday")
         case 6 | 7 => println("Weekend")
         case _ => println("Invalid day")
+end main
 ```
 
 A `match` expression compares the scrutinee (`dayNumber`) against each `case`
@@ -253,7 +264,7 @@ This example shows how a `match` expression returns a value that can be
 assigned to a variable.
 
 ```scala
-@main def matchExpression(): Unit =
+@main def main() =
 
     val month = 4
 
@@ -265,6 +276,7 @@ assigned to a variable.
         case _ => "Unknown"
 
     println(s"Season: $season")
+end main
 ```
 
 Like `if`, `match` in Scala is an expression that produces a value. The value
@@ -277,7 +289,7 @@ as an expression makes conditional assignments concise and readable.
 This example shows how a `match` expression works with `String` values.
 
 ```scala
-@main def matchStrings(): Unit =
+@main def main() =
 
     val fruit = "apple"
 
@@ -289,6 +301,7 @@ This example shows how a `match` expression works with `String` values.
         case _        => "unknown"
 
     println(s"Color: $color")
+end main
 ```
 
 `match` can compare any value that supports structural equality, including
@@ -301,7 +314,7 @@ order from top to bottom.
 This example demonstrates adding a condition (`if` guard) to a `case` clause.
 
 ```scala
-@main def matchGuards(): Unit =
+@main def main() =
 
     val score = 85
 
@@ -313,6 +326,7 @@ This example demonstrates adding a condition (`if` guard) to a `case` clause.
         case _            => "F"
 
     println(s"Grade: $grade")
+end main
 ```
 
 A guard is an `if` expression appended to a `case` pattern. The case only
@@ -326,7 +340,7 @@ simple value matching.
 This example demonstrates matching on the runtime type of a value.
 
 ```scala
-@main def typePatterns(): Unit =
+@main def main() =
 
     val value: Any = 42
 
@@ -335,6 +349,7 @@ This example demonstrates matching on the runtime type of a value.
         case s: String => println(s"String: ${s.toUpperCase}")
         case d: Double => println(s"Double: ${d * 2.0}")
         case _         => println("Unknown type")
+end main
 ```
 
 A type pattern `x: T` checks whether the scrutinee is an instance of `T` and,
@@ -350,7 +365,7 @@ This example shows how to destructure a case class using pattern matching.
 ```scala
 case class Point(x: Int, y: Int)
 
-@main def caseClassPattern(): Unit =
+@main def main() =
 
     val obj: Any = Point(5, 10)
 
@@ -360,6 +375,7 @@ case class Point(x: Int, y: Int)
             println(s"Sum: ${x + y}")
         case _ =>
             println("Not a Point")
+end main
 ```
 
 Pattern matching on a case class extracts the constructor arguments into named
@@ -373,7 +389,7 @@ that the compiler uses when matching.
 This example demonstrates matching and destructuring a tuple.
 
 ```scala
-@main def tuplePattern(): Unit =
+@main def main() =
 
     val coordinate = (3, -7)
 
@@ -385,6 +401,7 @@ This example demonstrates matching and destructuring a tuple.
         case (x, y)          => s"other quadrant ($x, $y)"
 
     println(description)
+end main
 ```
 
 Tuple patterns match on the structure of a tuple and bind its components to
@@ -398,7 +415,7 @@ This example illustrates the difference between wildcard (`_`) and variable
 patterns.
 
 ```scala
-@main def wildcardPattern(): Unit =
+@main def main() =
 
     val values: List[Any] = List(1, "hello", 3.14, true)
 
@@ -408,6 +425,7 @@ patterns.
             case n: Int     => println(s"int: $n")
             case s: String  => println(s"string: $s")
             case other      => println(s"other: $other")
+end main
 ```
 
 The wildcard `_` matches anything but does not bind a variable, useful when
@@ -424,7 +442,7 @@ destructuring.
 case class Address(city: String, country: String)
 case class Person(name: String, address: Address)
 
-@main def nestedPatterns(): Unit =
+@main def main() =
 
     val person: Any = Person("Alice", Address("Prague", "CZ"))
 
@@ -435,6 +453,7 @@ case class Person(name: String, address: Address)
             println(s"$name lives in $city, $country")
         case _ =>
             println("Unknown")
+end main
 ```
 
 Patterns can be nested arbitrarily deep. The inner pattern
@@ -450,7 +469,7 @@ This example demonstrates pattern matching on a Scala 3 enum.
 enum Direction:
     case North, South, East, West
 
-@main def enumMatch(): Unit =
+@main def main() =
 
     val dir = Direction.North
 
@@ -461,6 +480,7 @@ enum Direction:
         case Direction.West  => "Heading west"
 
     println(message)
+end main
 ```
 
 Scala 3 enums define a sealed set of named values. Matching on an enum is
@@ -473,7 +493,7 @@ or wildcard case is needed when all enum values are covered.
 This example shows how to check whether a value falls within a specific range.
 
 ```scala
-@main def rangeCheck(): Unit =
+@main def main() =
 
     val value = 50
 
@@ -485,6 +505,7 @@ This example shows how to check whether a value falls within a specific range.
         println("High range")
     else
         println("Out of range")
+end main
 ```
 
 Combining comparison operators with `&&` is the standard way to test whether
@@ -498,9 +519,9 @@ This example illustrates the guard clause pattern for early exit and cleaner
 code.
 
 ```scala
-@main def guardClauses(): Unit =
+@main def main() =
 
-    def checkAge(age: Int): Unit =
+    def checkAge(age: Int) =
 
         if age < 0 then
             println("Invalid age")
@@ -515,6 +536,7 @@ code.
     checkAge(-5)
     checkAge(14)
     checkAge(30)
+end main
 ```
 
 Guard clauses place precondition checks at the top of a function and exit
@@ -527,7 +549,7 @@ with minimal nesting. This improves readability compared to deeply nested
 This example demonstrates nested `if` statements for multi-level checks.
 
 ```scala
-@main def nestedConditionals(): Unit =
+@main def main() =
 
     val hasAccount  = true
     val isVerified  = true
@@ -543,6 +565,7 @@ This example demonstrates nested `if` statements for multi-level checks.
             println("Account not verified")
     else
         println("No account found")
+end main
 ```
 
 Nesting conditionals enables complex, hierarchical decision logic but can
@@ -555,7 +578,7 @@ expression to make the control flow explicit.
 This example demonstrates conditional logic based on collection properties.
 
 ```scala
-@main def collectionConditional(): Unit =
+@main def main() =
 
     val numbers = List(1, 2, 3, 4, 5)
 
@@ -565,6 +588,7 @@ This example demonstrates conditional logic based on collection properties.
         println(s"List has one element: ${numbers.head}")
     else
         println(s"List has ${numbers.size} elements")
+end main
 ```
 
 You can branch on properties of collections such as `isEmpty` or `size`.
@@ -577,7 +601,7 @@ the conditional both correct and safe.
 This example shows using conditional logic inside collection operations.
 
 ```scala
-@main def filterConditional(): Unit =
+@main def main() =
 
     val numbers = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 
@@ -586,6 +610,7 @@ This example shows using conditional logic inside collection operations.
 
     println(s"Even numbers: $evens")
     println(s"Odd numbers: $odds")
+end main
 ```
 
 The `filter` method takes a predicate — a function from element to `Boolean` —
@@ -600,7 +625,7 @@ This example demonstrates matching against list structure using built-in
 list patterns.
 
 ```scala
-@main def listPatterns(): Unit =
+@main def main() =
 
     def describe(lst: List[Int]): String =
         lst match
@@ -613,6 +638,7 @@ list patterns.
     println(describe(List(42)))
     println(describe(List(1, 2)))
     println(describe(List(1, 2, 3, 4)))
+end main
 ```
 
 The `::` constructor pattern deconstructs a `List` into its `head` (first
@@ -626,7 +652,7 @@ This example showcases a `match` expression that handles multiple types and
 value-level conditions together.
 
 ```scala
-@main def combinedPatterns(): Unit =
+@main def main() =
 
     val values: List[Any] = List(42, "hello", -3, "", 3.14, true, null)
 
@@ -643,6 +669,7 @@ value-level conditions together.
             case _               => "unknown"
 
         println(description)
+end main
 ```
 
 This advanced example combines null checking, type patterns, and guards in a

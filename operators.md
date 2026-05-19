@@ -456,10 +456,10 @@ The **lambda operator** in Scala is `=>`. It defines anonymous functions.
 ```scala
 @main def main() =
 
-  val words = Array("kind", "massive", "atom", "car", "blue")
-  scala.util.Sorting.quickSort(words)(Ordering.by(_.length))
-  // or using a lambda with sortWith
-  val sorted = words.sortWith((s1, s2) => s1 < s2)
+  val words = Vector("kind", "massive", "atom", "car", "blue")
+
+  // Sort by length (ascending)
+  val sorted = words.sortBy(e => e.length)
   println(sorted.mkString(", "))
 
 end main

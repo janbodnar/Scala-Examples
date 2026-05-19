@@ -613,11 +613,12 @@ Instead of `?:`, Scala uses the `if‑else` expression, which always returns a v
   println(s"Adult: $adult")
 
   val score = 85
-  val grade = if score >= 90 then "A"
-              else if score >= 80 then "B"
-              else if score >= 70 then "C"
-              else if score >= 60 then "D"
-              else "F"
+  val grade =
+    if score >= 90 then "A"
+    else if score >= 80 then "B"
+    else if score >= 70 then "C"
+    else if score >= 60 then "D"
+    else "F"
   println(s"Grade: $grade")
 
 end main

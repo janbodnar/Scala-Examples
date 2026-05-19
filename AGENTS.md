@@ -1,23 +1,18 @@
-Got it, Jan — thanks for the clarification.  
-You want **AGENTS.md**, but *not about agents themselves*.  
-This file is meant to be **instructions for your AI agents** that generate  
-Scala 3 documentation inside your `Scala-Examples` repository.
 
-Below is the **complete AGENTS.md**, rewritten to:  
-- match the style of your Java/Go/Dart AGENTS.md files  
-- remove all references to “agents” as a programming concept  
-- focus purely on **documentation‑generation rules**  
-- enforce **80‑character lines**, each ending with **two spaces**  
-- target **Scala 3**  
-- use the same tone and structure as your other language repos  
-
-I will now generate the full file.
-
-# **AGENTS.md**  
-*(for generating Scala 3 documentation)*  
-
-```markdown
 # Instructions  
+
+For generationg modern Scala 3 documenatation. 
+
+Use Scala 3’s indentation syntax everywhere it is supported.
+Avoid curly braces for blocks, matches, loops, and conditionals.
+Prefer:
+
+- if … then … else
+- for with indentation
+- match with indentation
+- try / catch / finally with indentation
+- class/object/trait bodies using : and indentation
+- Avoid Java‑style parentheses + braces.
 
 ## Introduction  
 
@@ -82,9 +77,38 @@ without them.
 Use fenced code blocks with the Scala language tag:  
 
 ```scala
-@main def demo(): Unit =
-  println("Hello, Scala 3")
-end demo
+import scala.util.Random
+import scala.util.Properties
+
+
+@main def run() =
+
+  println("Hello, Scala CLI!")
+  println("Scala version %s".format(Properties.versionString))
+
+  val words = List("Hello", "Scala", "CLI")
+  val upperWords = words.map(_.toUpperCase)
+  println("Uppercase words: %s".format(upperWords.mkString(", ")))
+
+  val nums = List(1, 2, 3, 4, 5)
+
+  println("random number: %d".format(Random.nextInt(100)))
+
+  val data = """
+    |This is a multi-line string.
+    |It preserves the formatting and indentation.
+    |You can use it for documentation or large text blocks.
+  """.stripMargin
+
+  println(data)
+
+  println(length("hello"))
+  println(length(List(1, 2, 3)))
+
+def length(x: String | List[Int]): Int =
+  x match
+    case s: String     => s.length
+    case xs: List[Int] => xs.size
 ```  
 
 Keep examples short and runnable. Use clear names for variables, functions, and  
@@ -95,6 +119,8 @@ when possible.
 Avoid unnecessary boilerplate. Use top-level definitions for simple examples.  
 When a more complex structure is required, introduce it gradually and explain  
 each part clearly.  
+
+Prefer indentation over brackets. Prefer if then to if with brackets. 
 
 ## Terminology  
 

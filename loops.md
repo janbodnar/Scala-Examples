@@ -110,13 +110,4 @@ while i < n do
 println(msum)
 ```
 
-## Match expression
 
-```scala   
-val grades = List("A", "B", "C", "D", "E", "F", "FX")
-
-for grade <- grades do
-    grade match
-        case "A" | "B" | "C" | "D" | "E" | "F" => println("passed")
-        case "FX" => println("failed")
-```

@@ -107,7 +107,8 @@ Scala encourages immutability (`val`), but `var` is available when mutation is n
 
 ## String concatenation
 
-The `+` method on strings works as expected. Scala also offers string interpolation, which is often more readable.
+The `+` method on strings works as expected. Scala also offers string interpolation,  
+which is often more readable.
 
 ```scala
 @main def main() =
@@ -122,7 +123,8 @@ The `+` method on strings works as expected. Scala also offers string interpolat
 end main
 ```
 
-String interpolation `s"..."` embeds expressions directly, avoiding many explicit concatenations.
+String interpolation `s"..."` embeds expressions directly, avoiding many explicit  
+concatenations.
 
 
 ## Increment and decrement operators
@@ -144,7 +146,8 @@ end main
 
 The `+=` is desugared to `x = x + 1`, which calls `x.+(1)`.
 
-For pre‑/post‑increment behaviour in expressions, you need to use an explicit temporary variable or separate statements, because the compound assignment returns `Unit`.
+For pre‑/post‑increment behaviour in expressions, you need to use an explicit temporary  
+variable or separate statements, because the compound assignment returns `Unit`.
 
 ```scala
 var a = 5

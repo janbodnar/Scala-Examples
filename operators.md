@@ -24,36 +24,46 @@ natural consequence of Scala’s unified object model.
 Unary `+` and `-` are implemented by the methods `unary_+` and `unary_-`.  
 
 ```scala
-@main def signDemo(): Unit =
+@main def main() =
+
   println(2)
   println(+2)
   println(-2)
+
+end main
 ```
 
 The unary `-` negates the value. Double negation returns the original number.
 
 ```scala
-@main def doubleNegation(): Unit =
+@main def main() =
+
   var a = 1
   println(-a)       // -1
   println(-(-a))    // 1
+
+end main
 ```
 
 Behind the scenes, `-a` calls `a.unary_-`.
 
----
 
 ## Multiple assignment
 
-Scala does not support comma‑separated multiple assignment of separate variables in one statement, but you can declare several variables on one line or use tuple extraction.
+Scala does not support comma‑separated multiple assignment of separate  
+variables in one statement, but you can declare several variables on one  
+line or use tuple extraction.
 
 ```scala
-@main def multipleVals(): Unit =
+@main def main() =
+
   val x = 10
   val y = 20
   val z = 30
   val sum = x + y + z
   println(s"Sum: $sum")
+
+end main
 ```
 
 With **pattern matching** you can extract tuple values in one step:
@@ -61,63 +71,75 @@ With **pattern matching** you can extract tuple values in one step:
 ```scala
 val (a, b, c) = (10, 20, 30)
 println(s"a=$a, b=$b, c=$c")
+
+end main
 ```
 
----
 
 ## Assignment operator
 
-The `=` sign is used for assignment; it is **not** an operator in the same sense as methods.
+The `=` sign is used for assignment; it is **not** an operator in  
+the same sense as methods.
 
 ```scala
-@main def simpleAssignment(): Unit =
+@main def main() =
+
   var x = 1
   println(x)   // 1
+
+end main
 ```
 
 Assignment is an action: evaluate the right side, then store the result.
 
 ```scala
-@main def reassign(): Unit =
+@main def main() =
+
   var x = 1
   x = x + 1   // x.+(1)
   println(x)  // 2
+
+end main
 ```
 
 Scala encourages immutability (`val`), but `var` is available when mutation is needed.
 
----
 
 ## String concatenation
 
 The `+` method on strings works as expected. Scala also offers string interpolation, which is often more readable.
 
 ```scala
-@main def stringConcat(): Unit =
+@main def main() =
+
   println("Return " + "of " + "the king.")
   println("Return".concat(" of").concat(" the king."))
   // Using string interpolation
   val first = "Hello"
   val second = "World"
   println(s"$first $second")  // Hello World
+
+end main
 ```
 
 String interpolation `s"..."` embeds expressions directly, avoiding many explicit concatenations.
 
----
 
 ## Increment and decrement operators
 
 Scala does **not** have `++` or `--` operators. Use `+= 1` and `-= 1` instead.
 
 ```scala
-@main def incDec(): Unit =
+@main def main() =
+
   var x = 6
   x += 1
   x += 1
   println(x)   // 8
   x -= 1
   println(x)   // 7
+
+end main
 ```
 
 The `+=` is desugared to `x = x + 1`, which calls `x.+(1)`.
@@ -129,16 +151,18 @@ var a = 5
 val b = { val tmp = a; a += 1; tmp }  // post‑increment workaround
 val c = { a += 1; a }                 // pre‑increment workaround
 println(s"a=$a, b=$b, c=$c")
+
+end main
 ```
 
----
 
 ## Arithmetic operators
 
 The familiar arithmetic operators are all method calls.
 
 ```scala
-@main def arithmetic(): Unit =
+@main def main() =
+
   val a = 10
   val b = 11
   val c = 12
@@ -154,12 +178,16 @@ The familiar arithmetic operators are all method calls.
   println(s"Multiplication: $mult")
   println(s"Division: $div")
   println(s"Remainder: $rem")
+
+end main
 ```
 
 Modulo works identically:
 
 ```scala
 println(9 % 4)  // 1
+
+end main
 ```
 
 ### Integer vs floating‑point division
@@ -167,7 +195,8 @@ println(9 % 4)  // 1
 Division of two integers yields an integer (truncated), unless one operand is a floating‑point type.
 
 ```scala
-@main def divisionTypes(): Unit =
+@main def main() =
+
   val intResult = 5 / 2         // 2
   val floatResult = 5 / 2.0     // 2.5
   println(s"Integer division: $intResult")
@@ -177,50 +206,58 @@ Division of two integers yields an integer (truncated), unless one operand is a 
   val b = 2
   val floatDiv = a.toDouble / b // explicit conversion
   println(s"7 / 2 (double): $floatDiv")
+
+end main
 ```
 
----
 
 ## Boolean operators
 
 Logical AND (`&&`), OR (`||`), and NOT (`!`) are all methods (with `!` being `unary_!`).
 
 ```scala
-@main def logicalOps(): Unit =
+@main def main() =
+
   val x = 3
   val y = 8
   println(s"x == y: ${x == y}")
   println(s"y > x: ${y > x}")
   if y > x then
     println("y is greater than x")
+
+end main
 ```
 
 Truth tables:
 
 ```scala
-@main def andTable(): Unit =
+@main def main() =
+
   println(s"true && true: ${true && true}")
   println(s"true && false: ${true && false}")
   println(s"false && true: ${false && true}")
   println(s"false && false: ${false && false}")
+
+end main
 ```
 
 `||` behaves similarly.
 
----
 
 ## Negation operator
 
 `!` flips a Boolean. It is defined as `unary_!` on `Boolean`.
 
 ```scala
-@main def negation(): Unit =
+@main def main() =
+
   println(!true)           // false
   println(!false)          // true
   println(!(4 < 3))        // true
+
+end main
 ```
 
----
 
 ## Short-circuit evaluation
 
@@ -235,7 +272,8 @@ def checkTwo(): Boolean =
   println("Inside checkTwo")
   true
 
-@main def shortCircuit(): Unit =
+@main def main() =
+
   println("Testing AND:")
   if checkOne() && checkTwo() then
     println("Pass")
@@ -243,6 +281,8 @@ def checkTwo(): Boolean =
   println("\nTesting OR:")
   if checkTwo() || checkOne() then
     println("Pass")
+
+end main
 ```
 
 Output:  
@@ -253,16 +293,19 @@ Inside checkOne
 Testing OR:
 Inside checkTwo
 Pass
+
+end main
 ```
 
----
 
 ## Relational operators
 
-`>`, `<`, `>=`, `<=`, `==`, `!=` compare values. In Scala, `==` checks **structural equality** (like Java’s `equals`), not reference equality.
+`>`, `<`, `>=`, `<=`, `==`, `!=` compare values. In Scala, `==` checks  
+**structural equality** (like Java’s `equals`), not reference equality. 
 
 ```scala
-@main def relational(): Unit =
+@main def main() =
+
   println(s"3 < 4: ${3 < 4}")
   println(s"3 == 4: ${3 == 4}")
   println(s"4 >= 3: ${4 >= 3}")
@@ -273,16 +316,19 @@ Pass
   val maxAge = 65
   if age >= minAge && age <= maxAge then
     println("Age is within range")
+
+end main
 ```
 
----
 
 ## String equality
 
-In Scala, `==` already compares string **content**, not references. For reference identity, use `eq` and `ne`.
+In Scala, `==` already compares string **content**, not references.  
+For reference identity, use `eq` and `ne`.
 
 ```scala
-@main def stringEquality(): Unit =
+@main def main() =
+
   val str1 = "hello"
   val str2 = "hello"
   val str3 = new String("hello")
@@ -290,16 +336,19 @@ In Scala, `==` already compares string **content**, not references. For referenc
   println(s"str1 == str2: ${str1 == str2}")       // true
   println(s"str1 == str3: ${str1 == str3}")       // true (structural)
   println(s"str1 eq str3: ${str1 eq str3}")       // false (reference)
+
+end main
 ```
 
----
 
 ## Bitwise operators
 
-Bitwise operations `&`, `|`, `^`, `~`, `<<`, `>>`, `>>>` are available as methods on integral types (`Int`, `Long`, etc.).
+Bitwise operations `&`, `|`, `^`, `~`, `<<`, `>>`, `>>>` are available as  
+methods on integral types (`Int`, `Long`, etc.).
 
 ```scala
-@main def bitwise(): Unit =
+@main def main() =
+
   println(~7)       // -8
   println(~ -8)     // 7
 
@@ -309,16 +358,18 @@ Bitwise operations `&`, `|`, `^`, `~`, `<<`, `>>`, `>>>` are available as method
   println(s"6 & 3 = $a")
   println(s"6 | 3 = $b")
   println(s"6 ^ 3 = $c")
+
+end main
 ```
 
----
 
 ## Bit shifting operators
 
 Shifts are methods: `<<`, `>>`, `>>>`.
 
 ```scala
-@main def shifts(): Unit =
+@main def main() =
+
   val num = 8
   val left = num << 1    // 16
   val right = num >> 1   // 4
@@ -326,16 +377,19 @@ Shifts are methods: `<<`, `>>`, `>>>`.
   println(s"8 >> 1 = $right")
   println(s"-8 >> 1 = ${-8 >> 1}")
   println(s"-8 >>> 1 = ${-8 >>> 1}")
+
+end main
 ```
 
----
 
 ## Compound assignment operators
 
-`+=`, `-=`, `*=`, etc. are shorthand for updating a `var`. They work for any method that has the corresponding symbolic method (e.g., `+=` requires a `+` method).
+`+=`, `-=`, `*=`, etc. are shorthand for updating a `var`. They work for any method  
+that has the corresponding symbolic method (e.g., `+=` requires a `+` method).
 
 ```scala
-@main def compound(): Unit =
+@main def main() =
+
   var a = 1
   a += 1     // a = a + 1
   println(a) // 2
@@ -351,19 +405,22 @@ Shifts are methods: `<<`, `>>`, `>>>`.
   println(s"After division: $count")    // 3
   count %= 2
   println(s"Remainder: $count")         // 1
+
+end main
 ```
 
----
 
 ## Pattern matching (instanceof alternative)
 
-Scala does not have the `instanceof` operator. Instead, it uses **pattern matching** or the `isInstanceOf[T]` method (less idiomatic).
+Scala does not have the `instanceof` operator. Instead, it uses **pattern matching**  
+or the `isInstanceOf[T]` method (less idiomatic).
 
 ```scala
 class Base
 class Derived extends Base
 
-@main def typeCheck(): Unit =
+@main def main() =
+
   val b: Base = new Base
   val d: Base = new Derived
 
@@ -374,30 +431,35 @@ class Derived extends Base
   d match
     case _: Derived => println("d is a Derived")
     case _: Base    => println("d is a Base")
+
+end main
 ```
 
 Pattern matching can also extract fields and bind variables:
 
 ```scala
 val obj: Any = "Hello"
+
 obj match
   case s: String => println(s"String length: ${s.length}")
   case _         => println("Not a string")
 ```
 
----
 
 ## Lambda operator
 
 The **lambda operator** in Scala is `=>`. It defines anonymous functions.
 
 ```scala
-@main def lambdaSort(): Unit =
+@main def main() =
+
   val words = Array("kind", "massive", "atom", "car", "blue")
   scala.util.Sorting.quickSort(words)(Ordering.by(_.length))
   // or using a lambda with sortWith
   val sorted = words.sortWith((s1, s2) => s1 < s2)
   println(sorted.mkString(", "))
+
+end main
 ```
 
 A lambda can be assigned to a variable that expects a function type:
@@ -406,10 +468,13 @@ A lambda can be assigned to a variable that expects a function type:
 trait GreetingService:
   def greet(msg: String): Unit
 
-@main def lambdaGreet(): Unit =
+@main def main() =
+
   val gs: GreetingService = (msg) => println(msg)
   gs.greet("Good night")
   gs.greet("Hello there")
+
+end main
 ```
 
 Often you use the standard `Function1` type:
@@ -417,26 +482,31 @@ Often you use the standard `Function1` type:
 ```scala
 val square: Int => Int = x => x * x
 println(s"5 squared: ${square(5)}")  // 25
+
+end main
 ```
 
 Scala also supports placeholders (`_`) for concise lambdas: `_ + 1` is equivalent to `x => x + 1`.
 
----
 
 ## Method reference operator
 
-Scala does not have a single `::` operator for method references. Instead, you can **eta‑expand** a method into a function using an underscore after the method name.
+Scala does not have a single `::` operator for method references. Instead, you can **eta‑expand**  
+a method into a function using an underscore after the method name.
 
 ```scala
-def greet(msg: String): Unit = println(msg)
+def greet(msg: String) = println(msg)
 
-@main def methodRef(): Unit =
+@main def main() =
+
   val f: String => Unit = greet // method is automatically eta-expanded when assigned
   f("Hello there")
 
   // Explicit eta‑expansion
   val g = greet _
   g("Hello again")
+
+end main
 ```
 
 For instance methods, you can use a lambda placeholder:
@@ -444,16 +514,19 @@ For instance methods, you can use a lambda placeholder:
 ```scala
 val numbers = List(1, 2, 3, 4, 5)
 numbers.foreach(println)   // println is eta‑expanded
+
+end main
 ```
 
----
 
 ## Operator precedence
 
-Precedence in Scala is determined by the **first character** of the operator/method name (not by the symbol set). For example, all letters have lower precedence than most special characters. The full table:
+Precedence in Scala is determined by the **first character** of the operator/method name  
+(not by the symbol set). For example, all letters have lower precedence than most special  
+characters. The full table:
 
 | Precedence (lowest to highest) | Category / first character            |
-|--------------------------------|---------------------------------------|
+--|
 | lowest                         | (all letters)                         |
 |                                | `|`                                   |
 |                                | `^`                                   |
@@ -468,55 +541,70 @@ Precedence in Scala is determined by the **first character** of the operator/met
 Parentheses can override any precedence.
 
 ```scala
-@main def precedenceDemo(): Unit =
+@main def main() =
+
   println(3 + 5 * 5)      // 28 ( * before + )
   println((3 + 5) * 5)    // 40
   println(!true | true)   // true  ( ! has higher precedence than | )
   println(!(true | true)) // false
+
+end main
 ```
 
-The rule applies uniformly: `a + b * c` is `a.+(b.*(c))`. Every symbolic method call respects the first‑character precedence.
+The rule applies uniformly: `a + b * c` is `a.+(b.*(c))`. Every symbolic method call  
+respects the first‑character precedence.
 
----
 
 ## Associativity rule
 
 **Associativity** is determined by the **last character** of the method name:
-- If it ends with `:` (e.g., `::`, `+:`, `:+`), the method is **right‑associative**, and it operates on the right operand (the method belongs to the right operand).
+- If it ends with `:` (e.g., `::`, `+:`, `:+`), the method is **right‑associative**, and    
+it operates on the right operand (the method belongs to the right operand).
 - Otherwise, it is **left‑associative**.
 
 Example: the `::` (cons) operator for lists is right‑associative:
 
 ```scala
 val list = 1 :: 2 :: 3 :: Nil  // interpreted as 1 :: (2 :: (3 :: Nil))
+
+end main
 ```
 
 Left‑associative operators behave conventionally: `9 / 3 * 3` is `(9 / 3) * 3` = `9`.
 
 ```scala
-@main def associativity(): Unit =
+@main def main() =
+
   val result = 9 / 3 * 3
   println(s"9 / 3 * 3 = $result")   // 9
+
+end main
 ```
 
-Assignment operators like `=` and `+=` are not methods and are always handled by the compiler as special forms (they do not follow the colon rule). However, the right‑associativity of `:`‑ending methods is a powerful design for building data structures.
+Assignment operators like `=` and `+=` are not methods and are always handled by the 
+compiler as special forms (they do not follow the colon rule). However, the 
+right‑associativity of `:`‑ending methods is a powerful design for building data structures.
 
 ```scala
 var j = 0
 j *= 3 + 1    // j = j * (3 + 1)  -> 0
 println(j)    // 0
+
+end main
 ```
 
-Chained assignments work because `a = b = c = 0` is parsed as `a = (b = (c = 0))` (assignments are not expressions returning a value; they produce `Unit`, so this is rarely useful in Scala).
+Chained assignments work because `a = b = c = 0` is parsed as `a = (b = (c = 0))`  
+(assignments are not expressions returning a value; they produce `Unit`, so this  
+is rarely useful in Scala).
 
----
 
 ## If‑else as ternary alternative
 
 Instead of `?:`, Scala uses the `if‑else` expression, which always returns a value.
 
 ```scala
-@main def ifElseExpression(): Unit =
+@main def main() =
+
   val age = 31
   val adult = if age >= 18 then true else false
   println(s"Adult: $adult")
@@ -528,13 +616,15 @@ Instead of `?:`, Scala uses the `if‑else` expression, which always returns a v
               else if score >= 60 then "D"
               else "F"
   println(s"Grade: $grade")
+
+end main
 ```
 
----
 
 ## Null coalescing with Option
 
-Scala discourages `null` in favour of `Option`. For cases where `null` exists, you can use `Option(...)` and `getOrElse` as a safe default.
+Scala discourages `null` in favour of `Option`. For cases where `null` exists,  
+you can use `Option(...)` and `getOrElse` as a safe default.
 
 ```scala
 val name: String = null
@@ -546,18 +636,20 @@ val message = if score > 0 then "Positive"
               else if score < 0 then "Negative"
               else "Zero"
 println(s"Score status: $message")
+
+end main
 ```
 
 The `if‑else` expression covers all ternary patterns without a separate operator.
 
----
 
 ## Prime number calculation
 
 A classic example bringing together many operators.
 
 ```scala
-@main def primes(): Unit =
+@main def main() =
+
   val nums = (0 to 28).toArray
   print("Prime numbers: ")
   for num <- nums do
@@ -571,16 +663,18 @@ A classic example bringing together many operators.
         i -= 1
       if isPrime then print(s"$num ")
   println()
+
+end main
 ```
 
----
 
 ## Combining multiple operators
 
 Precedence, associativity, and side effects (when using `var`) must be considered together.
 
 ```scala
-@main def complexExpression(): Unit =
+@main def main() =
+
   var a = 5
   var b = 10
   var c = 15
@@ -600,16 +694,18 @@ Precedence, associativity, and side effects (when using `var`) must be considere
   // After this, a=6, b=11, c=14, result3 = 5 + 11*15 = 170
   println(s"After complex expression:")
   println(s"a = $a, b = $b, c = $c")
+
+end main
 ```
 
----
 
 ## Operators with collections
 
 Compound assignment and lambda operators make collection processing concise.
 
 ```scala
-@main def collectionsOps(): Unit =
+@main def main() =
+
   val numbers = List(1, 2, 3, 4, 5)
   var sum = 0
   var product = 1
@@ -619,6 +715,8 @@ Compound assignment and lambda operators make collection processing concise.
   println(s"Sum: $sum")
   println(s"Product: $product")
   println(s"Average: ${sum.toDouble / numbers.length}")
+
+end main
 ```
 
 More idiomatic Scala uses higher‑order functions:
@@ -629,14 +727,15 @@ val product2 = numbers.product
 val avg = numbers.sum.toDouble / numbers.size
 ```
 
----
 
 ## Logical operators with predicates
 
-Boolean logic remains straightforward; Scala’s expression‑oriented nature shines when building predicates.
+Boolean logic remains straightforward; Scala’s expression‑oriented nature  
+shines when building predicates.
 
 ```scala
-@main def predicates(): Unit =
+@main def main() =
+
   val age = 25
   val hasLicense = true
   val hasInsurance = true
@@ -646,9 +745,10 @@ Boolean logic remains straightforward; Scala’s expression‑oriented nature sh
 
   val needsAttention = !hasLicense || !hasInsurance
   println(s"Needs attention: $needsAttention")
+
+end main
 ```
 
----
 
 ## Key takeaways
 
@@ -659,5 +759,3 @@ Boolean logic remains straightforward; Scala’s expression‑oriented nature sh
 - There is no `++`, `--`, or `?:` – use `+=`, `if‑else`, and pattern matching.
 - `==` checks **structural equality**; `eq`/`ne` checks reference identity.
 - Custom types can define operators to create natural, expressive DSLs.
-
-This document has shown the core operator idioms in Scala. By understanding these rules, you can read and write code that is both concise and precise.

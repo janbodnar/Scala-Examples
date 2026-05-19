@@ -3,17 +3,6 @@
 
 For generationg modern Scala 3 documenatation. 
 
-Use Scala 3’s indentation syntax everywhere it is supported.
-Avoid curly braces for blocks, matches, loops, and conditionals.
-Prefer:
-
-- if … then … else
-- for with indentation
-- match with indentation
-- try / catch / finally with indentation
-- class/object/trait bodies using : and indentation
-- Avoid Java‑style parentheses + braces.
-
 ## Introduction  
 
 This document defines the rules for generating Scala 3 documentation within the  
@@ -28,6 +17,26 @@ explanations and progressively structured examples. The writing style should be
 simple and direct, avoiding unnecessary theory or advanced language features  
 unless the topic explicitly requires them. The examples must be runnable, easy  
 to follow, and written in idiomatic Scala 3.  
+
+## Typography
+
+Text in descriptions and explanations should be around 80 chars per line for  
+better readability. Each line is terminated with two spaces so that Github's 
+markdown shows the text appropriately. 
+
+## Syntax
+
+Use Scala 3’s indentation syntax everywhere it is supported.  
+Avoid curly braces for blocks, matches, loops, and conditionals.  
+Prefer:
+
+- if … then … else
+- for with indentation
+- match with indentation
+- try / catch / finally with indentation
+- class/object/trait bodies using : and indentation
+- Avoid Java‑style parentheses + braces.
+
 
 ## Code descriptions  
 
@@ -109,6 +118,8 @@ def length(x: String | List[Int]): Int =
   x match
     case s: String     => s.length
     case xs: List[Int] => xs.size
+    
+end main
 ```  
 
 Keep examples short and runnable. Use clear names for variables, functions, and  
@@ -136,4 +147,4 @@ details such as threads or execution contexts.
 Maintain consistent phrasing across all sections so that readers can easily  
 transfer understanding from one topic to another.  
 
-Just tell me what you want next.
+

@@ -8,6 +8,7 @@ Functions accept blocks
 @main def main(): Unit =
 
     List(1, 2, 3).map { e =>  println( e * 2) }
+end
 ```
 
 ## Single abstract methods
@@ -28,4 +29,5 @@ trait Action:
 
     val a2: Action = (x: Int) => x * 20
     println(a2.act(10))
+end
 ```

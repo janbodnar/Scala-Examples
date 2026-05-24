@@ -698,10 +698,9 @@ case class Product(name: String, category: Category, price: Double)
   )
 
   val byCategory = catalog.groupBy(_.category)
-  byCategory.foreach { (cat, items) =>
+  byCategory.foreach: (cat, items) =>
     val total = items.map(_.price).sum
     println(f"$cat%-15s total: $$$total%.2f")
-  }
 ```
 
 `groupBy` accepts a function returning an enum value and produces a  
